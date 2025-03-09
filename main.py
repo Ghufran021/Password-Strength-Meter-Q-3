@@ -5,10 +5,10 @@ def evaluate_password(password):
     score = 0
     feedback = []
 
-    if len(password) >= 8:
+    if len(password) >= 9:
         score += 1
     else:
-        feedback.append("Password should be at least 8 characters long")
+        feedback.append("Password should be at least 9 characters long")
 
     if any(char.isupper() for char in password):
         score += 1
