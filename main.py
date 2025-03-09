@@ -31,7 +31,7 @@ def evaluate_password(password):
     else:
         feedback.append("Add at least one special character (!@#$%^&*)")
 
-    if score <= 2:
+    if score <= 3:
         strength = "Weak"
         color = "red"
     elif score <= 4:
@@ -47,7 +47,7 @@ def evaluate_password(password):
 def main():
     st.set_page_config(page_title="Password Strength Meter", page_icon="logo.jpg", layout="centered")
 
-    st.title("🔒 Password Strength Meter")
+    st.title("Password Strength Meter")
     st.write ("Made by MUHAMMD GHUFRAN")
     st.write("Enter a password to check its strength and get improvement suggestions.")
 
@@ -61,9 +61,9 @@ def main():
             st.subheader("Results")
             st.markdown(
                 f"**Strength:** <span style='color:{color}'>{strength}</span>", unsafe_allow_html=True)
-            st.write(f"**Score:** {score}/5")
+            st.write(f"**Score:** {score}/7")
 
-            st.progress(score / 5.0)
+            st.progress(score / 7.0)
 
             if strength != "Strong":
                 st.warning("Suggestions to improve:")
@@ -77,7 +77,7 @@ def main():
     with st.expander("Password Strength Rules"):
         st.write("""
         A strong password should:
-        - Be at least 8 characters long
+        - Be at least 9 characters long
         - Contain uppercase letters (A-Z)
         - Contain lowercase letters (a-z)
         - Include at least one digit (0-9)
